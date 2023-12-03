@@ -1,18 +1,14 @@
-package Services;
+package Test;
 
 import Model.Battery;
 import Model.EnergySource;
+import Services.ResourceBuffer;
 
 import java.util.Random;
 import java.util.concurrent.*;
 
 public class ResourceBatterySimulation {
-	
-	public ResourceBatterySimulation() {
-		
-	}
-	
-	public void Simulating() {
+	public static void main(String[] args) {
 		ResourceBuffer resourceBuffer = new ResourceBuffer(5);
 		int numberOfEnergySources = 5;
 		ExecutorService energySources = Executors.newFixedThreadPool(numberOfEnergySources);

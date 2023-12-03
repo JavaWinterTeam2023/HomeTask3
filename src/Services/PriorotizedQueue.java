@@ -7,7 +7,7 @@ public class PriorotizedQueue {
     protected PriorityQueue<TimeSlot> queue = new PriorityQueue<>();
     private int Capacity;
     public PriorotizedQueue(int capacity) {
-    	     this.Capacity=capacity;
+    	this.Capacity=capacity;
     }
 
     public synchronized void bookTimeSlot(TimeSlot timeSlot) throws InterruptedException {
@@ -16,16 +16,16 @@ public class PriorotizedQueue {
 			
 		}
     	queue.add(timeSlot);
-          notifyAll();
-     }
+         notifyAll();
+    }
 
     public synchronized void getNextTimeSlot()throws InterruptedException {
     	while (queue.isEmpty()) {
 			wait();
 			
 		}
-          queue.poll();  
-          notifyAll();
+         queue.poll(); 
+         notifyAll();
     }
 
 }
