@@ -14,6 +14,6 @@ public class Battery implements Runnable{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		resourceBuffer.available(this.id);
+		resourceBuffer.add(this.id);
 	}
 }

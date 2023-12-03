@@ -25,7 +25,7 @@ public class EnergySource implements Runnable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		resourceBuffer.busy(this.name);
+		resourceBuffer.free(this.name);
 	}
 	
 	

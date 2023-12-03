@@ -14,7 +14,7 @@ public class ResourceBuffer {
         this.maxSize = maxSize;
     }
 
-    public synchronized void available(int id) {
+    public synchronized void add(int id) {
         while (queue.size() == maxSize) {
             try {
                 System.out.println("No energy source is available, battery-" + id + " is waiting...");
@@ -29,7 +29,7 @@ public class ResourceBuffer {
         notify();
     }
 
-    public synchronized void busy(String energySource) {
+    public synchronized void free(String energySource) {
         while (queue.isEmpty()) {
             try {
             	System.out.println("All energy sources are free, waiting for battery charging...");
